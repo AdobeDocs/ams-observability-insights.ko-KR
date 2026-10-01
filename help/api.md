@@ -1,10 +1,12 @@
 ---
-source-git-commit: e5523081fcd68500602e5d1bf853694d1f6c3980
+title: Observability Insights 공용 API
+description: Observability Insights Public API를 사용하면 요청 개요, 서비스 카탈로그, 추적 및 지표와 같은 고유한 관찰 가능한 데이터를 고유한 도구, 스크립트 및 대시보드로 직접 가져올 수 있습니다.
+source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
 workflow-type: tm+mt
-source-wordcount: '1104'
+source-wordcount: '1135'
 ht-degree: 7%
-
 ---
+
 # Observability Insights 공용 API
 
 Observability Insights Public API를 사용하면 요청 개요, 서비스 카탈로그, 추적 및 지표와 같은 고유한 관찰 가능한 데이터를 고유한 도구, 스크립트 및 대시보드로 직접 가져올 수 있습니다.
@@ -14,8 +16,6 @@ Observability Insights Public API를 사용하면 요청 개요, 서비스 카�
 - **인증:** API 키(전달자 토큰)
 
 > 이 문서 전체에서 `{{API_BASE_URL}}`을(를) Observability Insights 인스턴스의 API 호스트(예: `https://insights.adobecqms.net/`)로 바꾸십시오.
-
-&#x200B;---
 
 ## &#x200B;1. API 키 가져오기
 
@@ -48,7 +48,6 @@ API 키 섹션에는 조직, 생성 날짜, 만료 및 마지막으로 사용한
 - 키를 주기적으로 회전하고 더 이상 사용되지 않는 키를 취소합니다.
 - 키가 손상된 경우 **조직 설정 → API 키**&#x200B;에서 즉시 취소하고 대체 키를 생성하십시오.
 
-&#x200B;---
 
 ## &#x200B;2. 요청 인증
 
@@ -59,8 +58,6 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 ```
 
 유효한 키가 없거나 만료/해지된 키가 있는 요청은 `401 Unauthorized`을(를) 받습니다. 세션 로그인(브라우저 쿠키/토큰)이 이 API에서 허용되는 **not**&#x200B;입니다.
-
-&#x200B;---
 
 ## &#x200B;3. 기본 개념
 
@@ -110,8 +107,6 @@ Retry-After: 60
 | `429 Too Many Requests` | 속도 제한 초과 — `Retry-After` 참조 |
 | `502 Bad Gateway` | 업스트림 쿼리 실패 — 안전하게 다시 시도 |
 | `503 Service Unavailable` | 일시적으로 데이터 백엔드를 사용할 수 없음 |
-
-&#x200B;---
 
 ## &#x200B;4. 엔드포인트
 
@@ -347,15 +342,11 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
-&#x200B;---
-
 ## &#x200B;5. 이 API가 수행하지 않는 작업
 
 - **원시 SQL 액세스 권한이 없습니다.** 모든 끝점은 조정된 특별히 빌드된 데이터 모양을 반환합니다. 기본 데이터 저장소를 직접 쿼리할 수는 없습니다.
 - **상호 테넌트 쿼리가 없습니다.** 모든 요청의 범위가 정확히 하나의 `tenant_id`(으)로 지정되었습니다.
 - **쓰기 액세스 권한이 없습니다.** 공개 API는 읽기 전용입니다.
-
-&#x200B;---
 
 ## &#x200B;6. 지원
 
