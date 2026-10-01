@@ -26,7 +26,7 @@ API 키는 계정에 연결되어 있고 단일 조직에 범위가 지정된 �
 1. [Observability Insights 대시보드](https://insights.adobecqms.net/)에 로그인합니다.
 2. **API 키**→ 프로필 메뉴(오른쪽 상단)를 엽니다.
    ![API 키 메뉴](v2-assets/api-key.png)
-3. **API 키** 탭에서 **키 생성**을 클릭합니다.
+3. **API 키** 탭에서 **키 생성**&#x200B;을 클릭합니다.
    ![API 키 생성](v2-assets/api-key-gen.png)
 4. 수사적 이름(예: `CI pipeline`, `Grafana datasource`)을 지정하고, 범위를 지정할 조직을 선택한 다음 선택적으로 만료 날짜를 설정하십시오.
 5. **키 생성**&#x200B;을 클릭합니다. 키가 **once** 형식으로 표시됩니다.
