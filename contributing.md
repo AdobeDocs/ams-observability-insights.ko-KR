@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 기여자 안내서 설명서
 
-[기여자 안내서](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)를 참조하세요.
+[기여자 안내서](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ko)를 참조하세요.
 
 ## 기여 방법
 
@@ -58,4 +58,4 @@ Adobe 직원이고 기여가 있는 경우 회사 git의 `AdobeDocs` 조직을 �
 
 ## 추가 정보
 
-GitHub 제작 플랫폼을 사용하는 방법에 대한 자세한 내용은 [Adobe 문서 기여자 안내서](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)를 참조하십시오.
+GitHub 제작 플랫폼을 사용하는 방법에 대한 자세한 내용은 [Adobe 문서 기여자 안내서](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=ko)를 참조하십시오.
