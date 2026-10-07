@@ -3,13 +3,20 @@ title: Observability Insights를 사용하여 AEM Managed Services 환경 모니
 description: 여기에서 AEM Managed Services의 Observability Insights가 다루는 내용, 대상 및 이 안내서의 나머지 부분을 탐색하는 방법을 이해할 수 있습니다.
 feature: Operations
 role: Admin
-source-git-commit: fc38d43e53a366fb16151f3bd105b561f55fcbfa
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '741'
 ht-degree: 0%
-
 ---
-
 
 # Observability Insights를 사용하여 AEM Managed Services 환경 모니터링 {#observability-insights-monitoring}
 

@@ -3,13 +3,20 @@ title: 적용 범위, 환경 및 데이터 보존
 description: AEM Managed Services에서 Observability Insights가 모니터링하는 내용, 애플리케이션이 표시되는 방법 및 모니터링 데이터가 유지되는 기간을 참조하십시오.
 feature: Operations
 role: Admin
-source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '267'
 ht-degree: 1%
-
 ---
-
 
 # 적용 범위, 환경 및 데이터 보존 {#coverage-environments-and-data-retention}
 

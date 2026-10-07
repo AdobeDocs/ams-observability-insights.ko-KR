@@ -3,13 +3,20 @@ title: 가시성 통찰력을 사용한 인프라 모니터링
 description: 인프라 대시보드를 사용하는 시점, 먼저 검토할 신호 및 전체 호스트 지표 참조를 찾을 위치에 대해 알아봅니다.
 feature: Operations
 role: Admin
-source-git-commit: 825334e003ae814af1b0845c6de1a533b4b5f47b
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '580'
 ht-degree: 0%
-
 ---
-
 
 # 호스트 {#hosts}
 

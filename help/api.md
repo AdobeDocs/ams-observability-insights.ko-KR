@@ -1,7 +1,10 @@
 ---
 title: Observability Insights 공용 API
 description: Observability Insights Public API를 사용하면 요청 개요, 서비스 카탈로그, 추적 및 지표와 같은 고유한 관찰 가능한 데이터를 고유한 도구, 스크립트 및 대시보드로 직접 가져올 수 있습니다.
-source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 7%
@@ -26,7 +29,7 @@ API 키는 계정에 연결되어 있고 단일 조직에 범위가 지정된 �
 1. [Observability Insights 대시보드](https://insights.adobecqms.net/)에 로그인합니다.
 2. **API 키**→ 프로필 메뉴(오른쪽 상단)를 엽니다.
    ![API 키 메뉴](v2-assets/api-key.png)
-3. **API 키** 탭에서 **키 생성**&#x200B;을 클릭합니다.
+3. **API 키** 탭에서 **키 생성**을 클릭합니다.
    ![API 키 생성](v2-assets/api-key-gen.png)
 4. 수사적 이름(예: `CI pipeline`, `Grafana datasource`)을 지정하고, 범위를 지정할 조직을 선택한 다음 선택적으로 만료 날짜를 설정하십시오.
 5. **키 생성**&#x200B;을 클릭합니다. 키가 **once** 형식으로 표시됩니다.
