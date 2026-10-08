@@ -3,13 +3,20 @@ title: 참조
 description: Observability Insights 대시보드, 지표 및 패널 수준 설명서를 위한 중앙 참조 인덱스입니다.
 feature: Operations
 role: Admin
-source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '60'
 ht-degree: 3%
-
 ---
-
 
 # 참조 {#reference}
 

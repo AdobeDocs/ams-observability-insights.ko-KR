@@ -3,13 +3,20 @@ title: 애플리케이션
 description: 애플리케이션은 APM(Application Performance Monitoring) 기능을 제공하여 애플리케이션 상태, 성능, 트랜잭션 및 각 서비스를 지원하는 기본 인프라스트럭처를 한눈에 파악할 수 있습니다.
 feature: Operations
 role: Admin
-source-git-commit: efddec659ebb1cdd22537d60ccca175680dfdab4
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '546'
 ht-degree: 0%
-
 ---
-
 
 # 애플리케이션
 

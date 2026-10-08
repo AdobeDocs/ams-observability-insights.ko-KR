@@ -3,13 +3,20 @@ title: Observability Insights 시작
 description: Observability Insights에 액세스하는 방법, Adobe이 귀하를 대신하여 모니터링하는 사항 및 이 안내서에서 필요한 것을 찾을 수 있는 위치를 알아봅니다.
 feature: Operations
 role: Admin
-source-git-commit: cc405e8b70973c33ecc6137114315998e8f9af50
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
-
 ---
-
 
 # Observability Insights 시작 {#get-started}
 

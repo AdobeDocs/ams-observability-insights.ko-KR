@@ -1,7 +1,10 @@
 ---
 title: Observability Insights 공용 API
 description: Observability Insights Public API를 사용하면 요청 개요, 서비스 카탈로그, 추적 및 지표와 같은 고유한 관찰 가능한 데이터를 고유한 도구, 스크립트 및 대시보드로 직접 가져올 수 있습니다.
-source-git-commit: f9361af48539ab50bcde6265963247714621c0ce
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '1135'
 ht-degree: 7%

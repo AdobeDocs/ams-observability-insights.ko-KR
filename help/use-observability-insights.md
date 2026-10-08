@@ -3,13 +3,20 @@ title: 가시성 인사이트 사용
 description: Observability Insights의 4가지 핵심 모니터링 및 조사 경험과 각 경험을 사용할 시기를 이해합니다.
 feature: Operations
 role: Admin
-source-git-commit: 6bbc906fa1c5570bc7ee2a6f536dd806c0c0db41
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '426'
 ht-degree: 0%
-
 ---
-
 
 # 가시성 인사이트 사용 {#use-observability-insights}
 
