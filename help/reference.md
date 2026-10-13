@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: e7f2416d7efe70e2c1dd7602d36d5fad0c9b6495
 workflow-type: tm+mt
-source-wordcount: '60'
+source-wordcount: '59'
 ht-degree: 3%
 ---
 
@@ -24,5 +24,5 @@ ht-degree: 3%
 
 ## 대시보드 참조
 
-- [APM 대시보드 참조](/help/reference/apm-dashboard-reference.md)
-- [인프라 대시보드 참조](/help/reference/infrastructure-dashboard-reference.md)
+- [APM 애플리케이션 모니터링](/help/applications.md)
+- [인프라 모니터링](/help/hosts.md)
