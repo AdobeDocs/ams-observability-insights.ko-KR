@@ -109,7 +109,7 @@ ht-degree: 20%
 | `JvmCpuRecentUtilization` | JVM 프로세스 CPU | % |         | 1분 롤업 |
 | `DispatcherRequestRate` | AEM dispatcher HTTP 요청 | 요청/초 | ✔ |                                              |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > JVM 메모리 지표는 메모리 풀당 **보고되므로 `average(value)`이(가) 풀 간 `JvmHeapUsed` / `JvmHeapLimit`의 평균입니다.**&#x200B;정확한 풀별 보기를 보려면 `FACET host, pool`을(를) 사용하십시오.
 
 ### `SpanBreakdown`: 미리 집계된 트랜잭션 구성

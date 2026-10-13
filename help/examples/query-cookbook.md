@@ -10,7 +10,7 @@ Cookbook은 주제별로 그룹화된 바로 사용 가능한 쿼리 라이브�
 
 **이 문서에서:** [10.1 데이터 검색](#101-data-discovery) · [10.2 처리량](#102-throughput) · [10.3 대기 시간](#103-latency) · [10.4 오류](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 서비스 및 호스트](#106-services-hosts--instances) · [10.7 종속성](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 인프라](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-> [!TIP]
+&#x200B;> [!TIP]
 > `'checkout'` 또는 `'web-publish-01'`과(와) 같은 예제 값을 테넌트의 실제 값으로 바꿉니다. 아래의 데이터 검색 쿼리에는 이러한 쿼리가 나열됩니다.
 
 ### 데이터 검색
@@ -385,7 +385,7 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > SQL은 쿼리당 하나의 엔터티를 읽으므로 사용자/시스템/iowait/도용에는 네 개의 나란히 위젯이 필요합니다([블루프린트 11.6](#116-infrastructure-capacity-board) W7-W10 참조). 공식은 그것들을 네 개의 급수가 아닌 하나의 수로 축소할 것이다.
 
 **막대** — 호스트별 CPU p95:

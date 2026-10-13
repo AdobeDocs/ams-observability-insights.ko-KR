@@ -23,7 +23,7 @@ ht-degree: 1%
 
 **차트 범례:** **N** = 숫자, **L** = 줄, **A** = 영역, **B** = 막대, **P** = 원형, **T** = 테이블.
 
----
+&#x200B;---
 
 ### 골든 시그널 / SLO 보드
 
@@ -120,7 +120,7 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
----
+&#x200B;---
 
 ### 오류 등급 보드
 
@@ -207,7 +207,7 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
----
+&#x200B;---
 
 ### 지연 심층 분석 보드
 
@@ -276,7 +276,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### 다운스트림 종속성 보드
 
@@ -357,7 +357,7 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### AEM Author / Publish / Dispatcher 보드
 
@@ -514,7 +514,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
----
+&#x200B;---
 
 ### 인프라 수용작업량 보드
 
@@ -661,7 +661,7 @@ SELECT rate(value) AS v FROM NetworkTransmitRate WHERE host = 'web-publish-01' T
 netRx + netTx
 ```
 
----
+&#x200B;---
 
 ### JVM 상태 게시판
 
@@ -733,7 +733,7 @@ SELECT average(value) AS v FROM JvmHeapLimit TIMESERIES AUTO
 (used / limit) * 100
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > 수식을 하나의 호스트로 범위를 지정하려면 **둘 다**&#x200B;개의 쿼리에 `WHERE host = 'my-publish-01'`을(를) 추가하십시오.
 
 **W6 · 호스트에서 사용하는 힙** — L, `MB`, 6×4
@@ -766,7 +766,7 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
 
----
+&#x200B;---
 
 ### 11.8 경영진 / NOC 담판
 
@@ -849,7 +849,7 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 
 **W10 · SLO 메모** — 텍스트 위젯, 12×1.
 
----
+&#x200B;---
 
 ### 비율 및 헤드룸 보드(공식 쇼케이스)
 
@@ -995,13 +995,13 @@ SELECT count(*) AS v FROM Transaction TIMESERIES AUTO
 (errors / total) / 0.001
 ```
 
----
+&#x200B;---
 
 ### 서비스 탐색기(변수 기반)
 
 **목표:** 팀이 _서비스 및 환경을 지정할 수 있는 하나의 보드._
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > [자습서 3, 단계 8.7](#87-make-dashboards-reusable-with-variables)에서 **현재 빌드 제한**&#x200B;을(를) 봅니다. `{{variables}}` 위젯 SQL 내의 은(는) 아직 미리 보거나 저장할 수 없습니다. 이 문제가 해결될 때까지 각 `{{…}}`을(를) 리터럴(예: `'checkout'`)로 바꾸고 _복제_&#x200B;를 사용하여 서비스별로 보드를 복제합니다. 아래 디자인은 대체가 종단간 지원될 때 사용할 준비가 되었습니다.
 
 **변수**

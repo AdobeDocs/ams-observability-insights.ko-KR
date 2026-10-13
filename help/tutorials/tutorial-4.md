@@ -64,7 +64,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > `avgDurationMs`은(는) 단위로 자동 태그가 지정되지 않았습니다. 위젯 **Unit**&#x200B;을(를) `ms`(으)로 설정합니다.
 
 ### 모든 지표 검색 및 쿼리
@@ -91,7 +91,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > 조정된 엔터티가 있으면(예: `CpuUtilization`) `MetricGauge`보다 선호합니다. 올바른 필터와 단위 변환을 적용하고 롤업 가속화될 수 있습니다.
 
 ### 올바른 추적 엔터티 선택

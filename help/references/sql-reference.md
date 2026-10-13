@@ -28,7 +28,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > 위의 `--` 주석은 설명서에만 해당됩니다. SQL 자체는 주석을 허용하지 않습니다.
 
 ### 필수 절
@@ -154,7 +154,7 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > 쿼리 기반 변수와 카디널리티 패싯(`urlPath`, `traceId`, `jcr.path`, `url`)에 대해 항상 `LIMIT`을(를) 설정하십시오.
 
 </details>
@@ -194,7 +194,7 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - 창은 **31일**&#x200B;을(를) 초과할 수 없습니다(_시간 범위는 31일_&#x200B;을(를) 초과할 수 없음).
 - 절대 날짜(`SINCE '2026-01-01'`) 및 `TODAY`/`YESTERDAY`은(는) 지원되지 않습니다.
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > 대시보드 및 탐색에서 **시간 선택기가 재정의됨** `SINCE` 및 `UNTIL`. [기간 우선 순위](#time-window-precedence)를 참조하십시오.
 
 </details>
@@ -224,7 +224,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > 대시보드에서 `AUTO`을(를) 선호합니다. 시간 선택기가 무엇을 말하든 약 120점을 유지한다. 또한 호스트 지표는 약 90초마다 스크랩되므로 호스트당 &quot;깨진&quot; 행을 방지합니다.
 
 </details>
@@ -434,7 +434,7 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - 카운터 엔터티([데이터 사전](#53-curated-metric-entities)에서 ✔(으)로 표시됨)에서만 작동합니다.
 - `TIMESERIES`이(가) 필요하며 **only** 집계여야 합니다. `FILTER`은(는) 허용되지 않습니다.
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > 항상 `FACET host`을(를) 선택하거나 단일 호스트로 필터링하십시오. 많은 호스트에서 패싯되지 않은 `rate()`은(는) 서로 다른 호스트의 카운터를 비교하고 의미 없는 숫자를 생성합니다. 디스크 카운터는 장치마다 있으므로 `FACET host, device`이(가) 가장 정확합니다.
 
 </details>
@@ -508,14 +508,14 @@ SELECT uniqueCount(host) AS hosts, uniqueCount(traceId) AS traces FROM Transacti
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > `attr = NULL`은(는) 오류입니다. `attr IS NULL` 사용.
 
 ### 유형 처리: 공백과 NULL
 
 모든 특성은 카탈로그에 유형이 있습니다. `string`, `number`, `boolean` 또는 `timestamp`. SQL 형식 검사 기능이 이에 대해 작동합니다(예: `average(service)`은(는) 거부되었습니다). 형식 변환 함수가 필요하지 않거나 사용할 수 없습니다.
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **공백과 NULL 비교** 대부분의 문자열 특성은 _누락_ 키가 `NULL`이(가) 아닌 빈 문자열 `''`로 읽히는 OpenTelemetry 특성 맵에서 가져옵니다. 특성을 포함하는 범위만 유지하려면 `IS NOT NULL` 대신 **`attr != ''`**&#x200B;을(를) 사용합니다. `http.statusCode`과(와) 같은 숫자 특성은 없을 때 `NULL`이므로 `IS NOT NULL`이(가) 작동합니다.
 
 ```sql
