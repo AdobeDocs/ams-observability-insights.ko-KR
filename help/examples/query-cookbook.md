@@ -1,16 +1,20 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 쿼리 Cookbook
+description: SQL 쿼리 레서피를 사용하여 Observability Insights에서 응용 프로그램 및 인프라 원격 분석을 조사합니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '580'
 ht-degree: 0%
 ---
+
 ## 쿼리 Cookbook {#query-cookbook}
 
 Cookbook은 주제별로 그룹화된 바로 사용 가능한 쿼리 라이브러리입니다. 각 쿼리 앞에는 **bold**&#x200B;의 가장 적합한 차트 종류가 표시됩니다. 시간 선택기가 창을 제어하기 때문에 Time 절이 제외됩니다.
 
 **이 문서에서:** [10.1 데이터 검색](#101-data-discovery) · [10.2 처리량](#102-throughput) · [10.3 대기 시간](#103-latency) · [10.4 오류](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 서비스 및 호스트](#106-services-hosts--instances) · [10.7 종속성](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 인프라](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > `'checkout'` 또는 `'web-publish-01'`과(와) 같은 예제 값을 테넌트의 실제 값으로 바꿉니다. 아래의 데이터 검색 쿼리에는 이러한 쿼리가 나열됩니다.
 
 ### 데이터 검색
@@ -385,7 +389,8 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL은 쿼리당 하나의 엔터티를 읽으므로 사용자/시스템/iowait/도용에는 네 개의 나란히 위젯이 필요합니다([블루프린트 11.6](#116-infrastructure-capacity-board) W7-W10 참조). 공식은 그것들을 네 개의 급수가 아닌 하나의 수로 축소할 것이다.
 
 **막대** — 호스트별 CPU p95:

@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: '자습서 4: 고급 함수'
+description: 고급 SQL 함수를 사용하여 Observability Insights 원격 분석을 분석하는 방법에 대해 알아봅니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '507'
 ht-degree: 1%
 ---
+
 ## 자습서 4: 고급 함수 {#tutorial-4-advanced-functions}
 
 이 자습서에서는 변동성, 성장, &quot;최악의 예&quot; 조회, 합계의 공유, 트랜잭션 구성 및 임의의 OpenTelemetry 지표와 같은 심층적인 조사를 수행하는 함수 및 엔터티를 다룹니다.
@@ -64,7 +67,8 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > `avgDurationMs`은(는) 단위로 자동 태그가 지정되지 않았습니다. 위젯 **Unit**&#x200B;을(를) `ms`(으)로 설정합니다.
 
 ### 모든 지표 검색 및 쿼리
@@ -91,7 +95,8 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > 조정된 엔터티가 있으면(예: `CpuUtilization`) `MetricGauge`보다 선호합니다. 올바른 필터와 단위 변환을 적용하고 롤업 가속화될 수 있습니다.
 
 ### 올바른 추적 엔터티 선택

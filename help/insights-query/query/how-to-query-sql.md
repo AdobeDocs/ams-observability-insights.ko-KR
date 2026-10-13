@@ -1,9 +1,12 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: SQL로 쿼리하는 방법
+description: Observability Insights에서 SQL 쿼리를 작성하고 실행하는 방법에 대해 알아봅니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '554'
 ht-degree: 0%
 ---
+
 ## SQL을 사용하여 쿼리하는 방법: 쿼리 기법 {#how-to-query-with-sql-the-mechanics-of-querying}
 
 도구를 사용하기 전에 사용 방법을 아는 것이 도움이 됩니다. 이 문서는 데이터를 탐색하는 방법을 보여 주고, 쿼리가 실행될 때 발생하는 상황을 설명하고, 간단한 쿼리부터 복잡한 쿼리까지 예제 쿼리를 살펴봅니다.
@@ -12,7 +15,8 @@ ht-degree: 0%
 
 SQL을 사용하는 가장 좋은 방법은 **Explore**&#x200B;을(를) 열고 직접 데이터를 테스트하는 것입니다.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > SQL은 읽기 전용입니다. 데이터를 변경하거나 삭제할 수 없으며 모든 쿼리의 범위가 테넌트로 지정됩니다.
 
 1. 앱 상단의 테넌트 전환기에서 **고객 선택**. SQL에는 단일 테넌트가 필요합니다.
@@ -37,7 +41,8 @@ FROM Transaction SELECT count(*) FACET service
 
 이렇게 하면 보고 중인 서비스를 보여 주는 서비스당 요청이 계산됩니다.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > 빌드하기 전에 **검색.** 속성 가용성은 각 서비스가 계측되는 방식에 따라 다릅니다. 새 테넌트에서 [검색 쿼리](#101-data-discovery)를 먼저 실행하여 실제로 데이터를 포함하는 서비스, 호스트, 특성 및 지표를 확인합니다.
 
 ### 쿼리 실행 방법
@@ -87,5 +92,6 @@ flowchart LR
 | **탐색** | 전역 시간 선택기입니다. 선택기 범위가 활성 상태일 때는 `SINCE`/`UNTIL`이(가) 무시됩니다. |
 | 명시적 범위가 없는 **API** | 쿼리에서 `SINCE`/`UNTIL`이(가) 마지막 시간으로 기본 설정됩니다. |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > 선택기가 대시보드 및 탐색에서 이기므로 이 안내서는 일반적으로 `SINCE`개의 대시보드 쿼리를 벗어납니다. 쿼리의 시간 선택기를 항상 정의해야 합니다.

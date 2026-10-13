@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: 성능
+description: Observability Insights에서 쿼리, 차트 및 대시보드 성능을 개선합니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '217'
-ht-degree: 2%
+source-wordcount: '227'
+ht-degree: 3%
 ---
+
 ## 성능 {#performance}
 
 모든 쿼리는 15초 시간 초과와 바이트 읽기 예산으로 실행됩니다. 이 문서에서는 Observability Insights가 쿼리를 자동으로 가속화하는 방법과 언제든지 빠르게 유지되는 대시보드를 디자인하는 방법에 대해 설명합니다.

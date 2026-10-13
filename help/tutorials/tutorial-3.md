@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: '자습서 3: 대시보딩 진행'
+description: 가시성 인사이트에서 변수, 공식 및 여러 위젯을 사용하여 대시보드를 작성합니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '902'
 ht-degree: 3%
 ---
+
 ## 자습서 3: 대시보딩 진행 {#tutorial-3-advance-your-dashboarding}
 
 이 자습서에서는 사용자 경험 점수, 카운터 비율, 사례 그룹화, 히스토그램, 임계값이 있는 KPI 타일, 섹션, 공식 위젯 및 변수 등의 프로덕션 등급 대시보드의 구성 요소를 빌드합니다.
@@ -38,7 +41,8 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > `host`(및 디스크의 경우 `device`)별로 패싯 `rate()`을(를) 항상 지정하거나 하나의 호스트로 필터링하십시오. 그렇지 않으면 서로 다른 숙주의 판독값이 한데 뒤섞여 결과가 무의미해진다.
 
 추적에서 **요청** 비율을 가져오려면 대신 고정 버킷에서 요청을 계산하십시오. 이는 분당 요청을 제공합니다.
@@ -146,7 +150,8 @@ SELECT sum(duration) AS v FROM Transaction
 | 각각 지표 1개 | 각 쿼리는 정확히 하나의 집계를 반환하며 `FACET`은(는) 반환하지 않습니다. |
 | 데이터 누락 | 값이 없거나 0으로 나누면 빈 점이 생성되며 `Infinity` 또는 `NaN`이(가) 되지 않습니다. |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > 시계열 수식의 모든 쿼리에 `TIMESERIES AUTO`을(를) 사용합니다. 쿼리는 하나의 창을 공유하므로 항상 동일한 버킷 크기로 확인됩니다.
 
 ### 변수를 사용하여 대시보드를 재사용할 수 있도록 설정
@@ -187,8 +192,9 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 테넌트 또는 시간 선택기가 변경되고 옵션이 사전순으로 정렬되면 새로 고침됩니다. 현재 선택이 더 이상 유효하지 않으면 첫 번째 값(단일 선택) 또는 모든 값(다중 선택)이 자동으로 선택됩니다. 변수의 쿼리는 다른 변수를 참조할 수 없습니다.
 
-&#x200B;> [!WARNING]
-> **현재 빌드 제한** 대체는 대시보드 그리드에서 발생하지만 **위젯 추가** 미리 보기 및 **서버측 저장 확인**&#x200B;은(는) 원시 `{{name}}` 토큰을 받고 _예기치 않은 문자 &#39;&lbrace;&#39;_(으)로 거부합니다. 실제로:
+>[!WARNING]
+>
+> **현재 빌드 제한** 대체는 대시보드 그리드에서 발생하지만 **위젯 추가** 미리 보기 및 **서버측 저장 확인**&#x200B;이(가) 원시 `{{name}}` 토큰을 받고 `Unexpected character '{'`(으)로 거부합니다. 실제로:
 >
 > - **위젯 제목** 및 **텍스트 위젯**&#x200B;의 `{{variables}}`이(가) 끝까지 작동합니다.
 > - **가져오기** 후에 **위젯 SQL** 내의 `{{variables}}`이(가) 올바르게 렌더링되지만 해당 위젯이 있는 동안에는 대시보드가 **저장**&#x200B;될 수 없습니다.

@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: '자습서 1: 첫 번째 쿼리'
+description: Observability Insights 원격 분석에 대해 첫 번째 SQL 쿼리를 작성하십시오.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '576'
 ht-degree: 0%
 ---
+
 ## 자습서 1: 첫 번째 쿼리 {#tutorial-1-your-first-queries}
 
 SQL을 시작합니다. 이 튜토리얼에서는 첫 번째 쿼리를 작성하고, 시간 창을 제어하고, 트렌드를 표시하고, 결과를 필터링하고, 그룹화하고, 대시보드에 첫 번째 차트를 배치합니다. 각 단계는 이전 단계를 기반으로 합니다.
@@ -32,7 +35,8 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 행은 첫 번째 열을 기준으로 내림차순으로 정렬되므로 `timestamp`을(를) 먼저 놓으면 맨 위에 최신 요청이 표시됩니다.
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL에 `SELECT *`이(가) 없습니다. 속성을 나열하면 결과를 작고 읽을 수 있습니다. [데이터 사전](#data-dictionary) 및 편집기의 자동 완성이 사용 가능한 항목을 표시합니다.
 
 ### 데이터 집계
@@ -65,7 +69,8 @@ SELECT uniqueCount(host) FROM Transaction
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > 별칭은 열 머리글과 범례 레이블이 되며 `ORDER BY`에서 참조하는 별칭입니다. 모든 집계에 이름을 붙이는 습관을 들여라.
 
 ### 시간 창 설정
@@ -84,7 +89,8 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 단위는 `second`, `minute`, `hour`, `day` 또는 `week`일 수 있습니다. 기간은 최대 31일이 될 수 있습니다.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **탐색** 및 **대시보드**&#x200B;에서 페이지 상단의 **시간 선택기**&#x200B;가 창을 제어하고 `SINCE`/`UNTIL`을(를) 재정의합니다. 다른 기간을 보려면 선택기를 변경합니다. 이 안내서의 나머지 부분에서는 이러한 이유로 `SINCE`개의 대시보드 쿼리를 제외합니다.
 
 ### `TIMESERIES` 플롯 트렌드
@@ -121,7 +127,8 @@ SELECT count(*) AS slowOrFailed FROM Transaction WHERE service = 'checkout' AND 
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > 문자열 값은 대/소문자를 구분하며 `"Error"` 또는 `'error'`이(가) 아닌 작은 따옴표 `'Error'`을(를) 사용합니다. `checkout`을(를) 테넌트의 서비스로 바꾸십시오. 다음 단계에서는 이러한 항목을 나열하는 방법을 보여 줍니다.
 
 ### `FACET`이(가) 있는 그룹

@@ -1,9 +1,12 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: 차트 및 대시보드 시작
+description: 차트 및 대시보드를 사용하여 가시성 인사이트 데이터를 시각화하는 방법에 대해 알아봅니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '292'
-ht-degree: 3%
+source-wordcount: '309'
+ht-degree: 2%
 ---
+
 ## 차트 및 대시보드: 데이터 시각화 {#charts-and-dashboards-visualizing-your-data}
 
 쿼리는 필요한 정보를 찾습니다. 차트와 대시보드는 조직에 유용한 정보를 제공합니다. 이 문서는 SQL 결과가 차트가 되는 방법과 대시보드를 빌드, 구성 및 공유하는 방법을 보여 줍니다.

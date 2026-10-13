@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: SQL 쿼리 예제
+description: Observability Insights 원격 분석을 위해 SQL 쿼리 예제를 살펴봅니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '306'
 ht-degree: 10%
 ---
-### SQL 쿼리 예제
+
+## SQL 쿼리 예제
 
 다음은 보다 완벽한 예입니다. 이 쿼리의 경우:
 
@@ -89,7 +92,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 <a id="what-sql-doesnt-do"></a>
 
-### SQL에서 수행할 수 없는 작업
+## SQL에서 수행할 수 없는 작업
 
 SQL은 의도적으로 작습니다. 이렇게 하면 쿼리가 안전하고 신속하며 테넌트가 격리됩니다. 이러한 기능 중 하나가 필요한 경우 대체 기능을 사용하십시오.
 

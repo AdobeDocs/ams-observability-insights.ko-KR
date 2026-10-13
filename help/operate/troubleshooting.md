@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: 문제 해결
+description: Observability Insights에서 SQL 쿼리, 차트 및 대시보드 문제를 해결합니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '337'
 ht-degree: 5%
 ---
+
 ## 문제 해결 {#troubleshooting}
 
 쿼리를 **유효성 검사** 또는 **실행**&#x200B;할 때 편집기와 대시보드의 위젯 자체에 오류 메시지가 표시됩니다. 첫 번째 열에서 메시지를 찾습니다.

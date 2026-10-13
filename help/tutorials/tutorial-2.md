@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: '자습서 2: 데이터 제어'
+description: Observability Insights에서 쿼리 결과를 필터링, 그룹화 및 제어하는 방법을 알아봅니다.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '361'
 ht-degree: 0%
 ---
+
 ## 자습서 2: 데이터 제어 {#tutorial-2-control-your-data}
 
 이 튜토리얼에서는 원시 카운트, 즉 고유 카운트, 최신 값, 백분율, 백분위수, 와일드카드, 정렬 및 다차원 그룹화를 응답으로 바꾸는 함수 및 절에 대해 알아봅니다.
@@ -66,7 +69,8 @@ SELECT percentage(*, WHERE duration > 2000) AS slowPct FROM Transaction FACET se
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > `Transaction.duration`의 p50, p95 및 p99는 긴 창에 걸쳐 롤업에서 제공되므로 주별 보기를 빠르게 볼 수 있습니다.
 
 ### 레이블을 사용하여 결과를 읽을 수 있도록 만들기
@@ -77,7 +81,8 @@ SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percent
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > 별칭은 `SELECT`개 항목에만 적용됩니다. Facet 열에는 항상 속성 이름이 레이블이 지정됩니다.
 
 ### 패턴 및 목록 일치
@@ -100,7 +105,8 @@ SELECT count(*) AS requests FROM Transaction WHERE urlPath NOT LIKE '%.js' AND u
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL에 정규식(`RLIKE`)이 없습니다. `LIKE` 패턴을 `OR`과(와) 결합하거나 `IN`을(를) 사용합니다.
 
 ### `ORDER BY`(으)로 정렬 및 순위 지정
@@ -117,7 +123,8 @@ SELECT count(*) AS requests, percentile(duration, 95) AS p95 FROM Transaction FA
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > `HAVING`이(가) 없습니다. &quot;사용 중&quot; 작업만 찾으려면 `requests` 순위를 매기고 상위 N을 유지하거나 노이즈를 제거하는 `WHERE`을(를) 추가하십시오(예: `WHERE http.method != 'OPTIONS'`).
 
 ### 여러 속성으로 그룹화

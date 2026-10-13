@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: 데이터 사전
+description: Observability Insights SQL 쿼리에 사용할 수 있는 엔티티 및 속성을 참조하십시오.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '598'
 ht-degree: 20%
 ---
+
 ## 데이터 사전 {#data-dictionary}
 
 쿼리할 수 있는 모든 엔티티 및 속성입니다. 설명이 있는 라이브 카탈로그는 [탐색] 및 [위젯 추가] 대화 상자의 **쿼리 안내서** 패널에도 있습니다.
@@ -109,7 +112,8 @@ ht-degree: 20%
 | `JvmCpuRecentUtilization` | JVM 프로세스 CPU | % |         | 1분 롤업 |
 | `DispatcherRequestRate` | AEM dispatcher HTTP 요청 | 요청/초 | ✔ |                                              |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > JVM 메모리 지표는 메모리 풀당 **보고되므로 `average(value)`이(가) 풀 간 `JvmHeapUsed` / `JvmHeapLimit`의 평균입니다.**&#x200B;정확한 풀별 보기를 보려면 `FACET host, pool`을(를) 사용하십시오.
 
 ### `SpanBreakdown`: 미리 집계된 트랜잭션 구성
