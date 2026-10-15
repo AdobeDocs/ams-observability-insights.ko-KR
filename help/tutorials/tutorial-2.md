@@ -1,17 +1,15 @@
 ---
 title: '자습서 2: 데이터 제어'
 description: Observability Insights에서 쿼리 결과를 필터링, 그룹화 및 제어하는 방법을 알아봅니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '337'
 ht-degree: 0%
 ---
 
 ## 자습서 2: 데이터 제어 {#tutorial-2-control-your-data}
 
 이 튜토리얼에서는 원시 카운트, 즉 고유 카운트, 최신 값, 백분율, 백분위수, 와일드카드, 정렬 및 다차원 그룹화를 응답으로 바꾸는 함수 및 절에 대해 알아봅니다.
-
-**이 자습서에서:** [7.1 uniqueCount](#71-count-distinct-values-with-uniquecount) · [7.2 latest/earliest](#72-find-the-latest-and-earliest-values) · [7.3 percentage](#73-calculate-percentages) · [7.4 percentage](#74-understand-latency-with-percentile) · [7.5 레이블](#75-make-results-readable-with-labels) · [7.6 와일드카드 및 목록](#76-match-patterns-and-lists) · [7.7 정렬](#77-sort-and-rank-with-order-by) · [7.8 다중 패싯](#78-group-by-several-attributes) · [7.9 이전 Windows](#79-look-at-a-past-window)
 
 ### `uniqueCount`을(를) 사용하여 고유 값 계산
 
@@ -69,7 +67,7 @@ SELECT percentage(*, WHERE duration > 2000) AS slowPct FROM Transaction FACET se
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
->[!TIP]
+> **팁**
 >
 > `Transaction.duration`의 p50, p95 및 p99는 긴 창에 걸쳐 롤업에서 제공되므로 주별 보기를 빠르게 볼 수 있습니다.
 
@@ -123,7 +121,7 @@ SELECT count(*) AS requests, percentile(duration, 95) AS p95 FROM Transaction FA
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
->[!TIP]
+> **팁**
 >
 > `HAVING`이(가) 없습니다. &quot;사용 중&quot; 작업만 찾으려면 `requests` 순위를 매기고 상위 N을 유지하거나 노이즈를 제거하는 `WHERE`을(를) 추가하십시오(예: `WHERE http.method != 'OPTIONS'`).
 

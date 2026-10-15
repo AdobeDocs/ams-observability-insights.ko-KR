@@ -1,17 +1,15 @@
 ---
 title: '자습서 4: 고급 함수'
 description: 고급 SQL 함수를 사용하여 Observability Insights 원격 분석을 분석하는 방법에 대해 알아봅니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '483'
 ht-degree: 1%
 ---
 
 ## 자습서 4: 고급 함수 {#tutorial-4-advanced-functions}
 
 이 자습서에서는 변동성, 성장, &quot;최악의 예&quot; 조회, 합계의 공유, 트랜잭션 구성 및 임의의 OpenTelemetry 지표와 같은 심층적인 조사를 수행하는 함수 및 엔터티를 다룹니다.
-
-**이 자습서에서:** [9.1 stddev](#91-measure-consistency-with-stddev) · [9.2 파생물](#92-spot-growth-with-derivative) · [9.3 Ranked Latest](#93-find-the-worst-example-with-ranked-latest) · [9.4 percentOfTotal](#94-find-where-time-goes-with-percentoftotal) · [9.5 SpanBreakdown](#95-break-down-transactions-with-spanbreakdown) · [9.6 모든 지표 선택](#96-discover-and-query-any-metric) · [9.7 엔티티 선택](#97-choose-the-right-trace-entity) · [9.8 중첩 집계](#98-work-around-nested-aggregation)
 
 ### `stddev`과의 일관성 측정
 
@@ -124,9 +122,9 @@ SELECT count(*) AS calls, percentage(*, WHERE status = 'Error') AS errorPct, per
 NRQL을 사용하면 &quot;호스트당 최대 수의 평균&quot;과 같은 하위 쿼리로 집계를 집계할 수 있습니다. SQL은 그렇지 않습니다. 다음은 선택 사항입니다.
 
 | 목표 | SQL 방식 |
-| --------------------------------------- | ---------------------------------------------------------- |
+| --------------------------------------- | -------------------------------------------------------------------- |
 | 그룹당 값, 그룹 등급 지정 | `FACET group` + `ORDER BY alias` + `LIMIT` |
-| 두 개의 집계 비율 | [공식 위젯](#86-combine-queries-with-formula-widgets) |
+| 두 개의 집계 비율 | [공식 위젯](tutorial-3.md#combine-queries-with-formula-widgets) |
 | 호스트당 값, 그 다음 &quot;최악의 호스트&quot; | `FACET host ORDER BY alias DESC LIMIT 1` |
 | 시간 경과에 따른 호스트당 평균 | `FACET host TIMESERIES AUTO` 및 시리즈 읽기 |
 

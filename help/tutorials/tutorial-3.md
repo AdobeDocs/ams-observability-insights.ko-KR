@@ -1,17 +1,15 @@
 ---
 title: '자습서 3: 대시보딩 진행'
 description: 가시성 인사이트에서 변수, 공식 및 여러 위젯을 사용하여 대시보드를 작성합니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '902'
+source-wordcount: '879'
 ht-degree: 3%
 ---
 
 ## 자습서 3: 대시보딩 진행 {#tutorial-3-advance-your-dashboarding}
 
 이 자습서에서는 사용자 경험 점수, 카운터 비율, 사례 그룹화, 히스토그램, 임계값이 있는 KPI 타일, 섹션, 공식 위젯 및 변수 등의 프로덕션 등급 대시보드의 구성 요소를 빌드합니다.
-
-**이 자습서에서:** [8.1 apdex](#81-score-user-experience-with-apdex) · [8.2 비율](#82-turn-counters-into-rates-with-rate) · [8.3 사례](#83-group-values-into-cases-with-filter) · [8.4 히스토그램](#84-build-a-latency-histogram) · [8.5 KPI 타일 및 섹션](#85-build-kpi-tiles-and-sections) · [8.6 공식](#86-combine-queries-with-formula-widgets) · [8.7 변수](#87-make-dashboards-reusable-with-variables) · [8.8 종합](#88-put-it-together)
 
 ### `apdex`(으)로 사용자 경험 점수 매기기
 
@@ -29,7 +27,7 @@ SELECT apdex(duration, 500) AS apdex FROM Transaction FACET service TIMESERIES A
 
 임계값이 `0 → Red`, `0.7 → Amber`, `0.85 → Green`인 **숫자** 위젯에 넣습니다. 가장 일치하는 밴드가 승리하므로 낮은 점수는 빨간색으로 유지됩니다.
 
-### 8.2 카운터를 `rate`(으)로 전환합니다.
+### 카운터를 `rate`(으)로 전환합니다.
 
 카운터 엔터티([데이터 사전](#53-curated-metric-entities)의 ✔)는 계속 증가하는 합계를 저장합니다. `rate(value)`이(가) 초당 값으로 변환합니다. `TIMESERIES`이(가) 필요하며 유일한 집계여야 합니다.
 
@@ -41,7 +39,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
->[!WARNING]
+> **경고**
 >
 > `host`(및 디스크의 경우 `device`)별로 패싯 `rate()`을(를) 항상 지정하거나 하나의 호스트로 필터링하십시오. 그렇지 않으면 서로 다른 숙주의 판독값이 한데 뒤섞여 결과가 무의미해진다.
 
@@ -192,7 +190,7 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 테넌트 또는 시간 선택기가 변경되고 옵션이 사전순으로 정렬되면 새로 고침됩니다. 현재 선택이 더 이상 유효하지 않으면 첫 번째 값(단일 선택) 또는 모든 값(다중 선택)이 자동으로 선택됩니다. 변수의 쿼리는 다른 변수를 참조할 수 없습니다.
 
->[!WARNING]
+> **경고**
 >
 > **현재 빌드 제한** 대체는 대시보드 그리드에서 발생하지만 **위젯 추가** 미리 보기 및 **서버측 저장 확인**&#x200B;이(가) 원시 `{{name}}` 토큰을 받고 `Unexpected character '{'`(으)로 거부합니다. 실제로:
 >
@@ -203,4 +201,4 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 ### 합쳐
 
-이제 [대시보드 블루프린트](#dashboard-blueprints)에 사용된 모든 빌딩 블록이 있습니다. 임계값, 섹션, 백분위수, Apdex, 비율, 대/소문자 열, 히스토그램, 수식 및 변수가 있는 KPI 타일입니다. 블루프린트는 이를 완벽한 골든 시그널, 오류 등급 지정, AEM, 인프라 및 JVM 대시보드로 결합하는 방법을 보여 줍니다.
+이제 [대시보드 블루프린트](../examples/dashboard-blueprint.md)에 사용된 모든 빌딩 블록이 있습니다. 임계값, 섹션, 백분위수, Apdex, 비율, 대/소문자 열, 히스토그램, 수식 및 변수가 있는 KPI 타일입니다. 블루프린트는 이를 완벽한 골든 시그널, 오류 등급 지정, AEM, 인프라 및 JVM 대시보드로 결합하는 방법을 보여 줍니다.
