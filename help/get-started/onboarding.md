@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: d8c86bf4873a9eef6ce9bbcca5a545aa4e862e5f
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '518'
 ht-degree: 0%
 ---
 
@@ -65,6 +65,6 @@ Adobe은 Observability Insights APM Java 플러그인을 사용하여 AEM 작성
 
 **시작** — 이 섹션. 액세스, 계정 프로비저닝, 모니터링 범위 및 데이터 보존에 대해 다룹니다.
 
-**[가시성 인사이트 사용](../use-observability-insights.md)** — 일상적인 조사를 위한 작업 중심 지침입니다. 느린 페이지, 오류 스파이크 또는 불안정한 트랜잭션과 같이 응용 프로그램에 대한 증상이 나타날 때는 [응용 프로그램](../applications.md)을 사용하십시오. 호스트 수준 리소스 압력(CPU, 메모리, 디스크 또는 네트워크)이 응용 프로그램에 표시되는 내용을 설명하는지 여부를 결정해야 하는 경우 [호스트](../hosts.md)를 사용하십시오. [응용 프로그램 문제 조사](../use-cases/investigate-application-issues.md) 및 [인프라 문제 조사](../use-cases/investigate-infrastructure-issues.md)에서 단계별 조사 흐름을 사용할 수 있습니다.
+**[가시성 인사이트 사용](../use-observability-insights.md)** — 일상적인 조사를 위한 작업 중심 지침입니다. 느린 페이지, 오류 스파이크 또는 불안정한 트랜잭션과 같이 응용 프로그램에 대한 증상이 나타날 때는 [응용 프로그램](../applications.md)을 사용하십시오. 호스트 수준 리소스 압력(CPU, 메모리, 디스크 또는 네트워크)이 응용 프로그램에 표시되는 내용을 설명하는지 여부를 결정해야 하는 경우 [호스트](../hosts.md)를 사용하십시오.
 
 **[자주 묻는 질문](../troubleshooting/common-questions.md)** — 시작 위치를 잘 모르거나 활성 문제 중에 빠른 응답이 필요한 경우에 대한 일반적인 질문 및 지원 중심의 진입점입니다.

@@ -1,7 +1,7 @@
 ---
 title: 데이터 사전
 description: Observability Insights SQL 쿼리에 사용할 수 있는 엔티티 및 속성을 참조하십시오.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 20%
@@ -14,8 +14,8 @@ ht-degree: 20%
 ### 엔티티 추적
 
 | 기관 | 다음 포함 | 고정 범위 | 롤업 |
-| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------ |
-| `Transaction` | 인바운드 서버 요청 | `kind = Server` | 1m/5m/1h([성능](#performance)) |
+| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `Transaction` | 인바운드 서버 요청 | `kind = Server` | 1m/5m/1h([성능](../operate/performance.md)) |
 | `AppRequest` | 인바운드 서버 **및** 메시지 소비자 요청 | `kind IN (Server, Consumer)` | — |
 | `Span` | 모든 범위(서버, 클라이언트, 생산자, 소비자, 내부) | — | — |
 
