@@ -1,7 +1,7 @@
 ---
 title: 대시보드 및 쿼리 설명서
 description: Observability Insights SQL 쿼리 및 대시보드에 대한 참조 설명서입니다.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '10254'
 ht-degree: 4%
@@ -40,7 +40,7 @@ ht-degree: 4%
 |                 | [13. 문제 해결](#13-troubleshooting) | 모든 오류 메시지, 의미 및 수정 방법 |
 |                 | [14. 부록](#14-appendix) | 제한, 내보내기 파일 형식, 한 페이지 치트 시트 |
 
-&#x200B;# 시작하기
+# 시작하기
 
 ## &#x200B;1. SQL 시작하기: 원격 분석 언어
 
@@ -86,7 +86,7 @@ SQL은 4개의 데이터 제품군을 쿼리할 수 있습니다. 전체 목록�
 | 위치 | 여는 방법 | 무엇을 위한 것입니까 |
 | ----------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **탐색** | 왼쪽 탐색 → **탐색** | Ad hoc analysis. **Visual Builder** 또는 **SQL** 탭, **유효성 검사**&#x200B;를 사용한 다음 **실행**(⌘/Ctrl + Enter)을 사용하십시오. **기록** 및 **저장됨** 쿼리와 **쿼리 안내서** 패널을 포함합니다. |
-| **대시보드** | 왼쪽 탐색 → **대시보드**&#x200B;를 열거나 대시보드를 만들 → 있습니다. →2&rbrace;위젯 추가&#x200B;**&#x200B;** | 지속적인 차트, KPI 및 테이블을 대시보드로 결합. |
+| **대시보드** | 왼쪽 탐색 → **대시보드**&#x200B;를 열거나 대시보드를 만들 → 있습니다. →2}위젯 추가&#x200B;**** | 지속적인 차트, KPI 및 테이블을 대시보드로 결합. |
 | **공식 위젯** | **공식→ 위젯 추가** | 2-6개의 SQL 쿼리를 산술(비율, 여유 공간, 굽기 비율)과 결합합니다. |
 | **대시보드 변수** | 쿼리에서 **+ 변수 →** | SQL `FACET` 쿼리의 개별 값에서 선택기를 채웁니다. |
 | **쿼리 검사** | 차트 가리키기 → 쿼리 검사 | 기본 제공 또는 대시보드 차트 뒤에 있는 SQL을 확인합니다. |
@@ -505,7 +505,7 @@ SQL은 의도적으로 작습니다. 이렇게 하면 쿼리가 안전하고 신
 
 [↑ 위로 돌아가기](#top)
 
-&#x200B;# 참조
+# 참조
 
 ## &#x200B;4. SQL 참조
 
@@ -1194,7 +1194,7 @@ SELECT count(*) AS jcrCalls FROM Span WHERE jcr.operation != '' FACET jcr.operat
 
 [↑ 위로 돌아가기](#top)
 
-&#x200B;# 튜토리얼
+# 튜토리얼
 
 ## &#x200B;6. 자습서 1: 첫 번째 쿼리
 
@@ -1828,7 +1828,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 [↑ 위로 돌아가기](#top)
 
-&#x200B;# 예
+# 예
 
 ## &#x200B;10. 쿼리 Cookbook
 
@@ -2957,7 +2957,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](#53-curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
+**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](data-dictionary.md#curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
 
 `netRx` 쿼리:
 
@@ -3245,7 +3245,7 @@ SELECT average(value) AS v FROM JvmHeapUsed TIMESERIES AUTO
 limit - used
 ```
 
-**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](#53-curated-metric-entities) 참조)
+**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](data-dictionary.md#curated-metric-entities) 참조)
 
 `rx` 쿼리:
 
@@ -3385,7 +3385,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 [↑ 위로 돌아가기](#top)
 
-&#x200B;# 운영
+# 운영
 
 ## &#x200B;12. 성능
 
@@ -3430,7 +3430,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 | `FACET and TIMESERIES require an aggregate query` | FACET/TIMESERIES가 있는 이벤트 쿼리 | 합계를 사용합니다. |
 | `FACET supports at most five attributes` | > 5개 패싯 | 줄이기. |
 | `average requires a numeric attribute` | e.g. `average(service)` | `uniqueCount`/`latest` 또는 숫자 특성을 사용하십시오. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()`(시계열 또는 계기 없음) | `TIMESERIES AUTO`을(를) 추가합니다. ✔ 카운터 엔터티([조정된 지표 엔터티](#53-curated-metric-entities))를 사용합니다. 게이지의 경우 `derivative()`을(를) 사용합니다. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()`(시계열 또는 계기 없음) | `TIMESERIES AUTO`을(를) 추가합니다. ✔ 카운터 엔터티([조정된 지표 엔터티](data-dictionary.md#curated-metric-entities))를 사용합니다. 게이지의 경우 `derivative()`을(를) 사용합니다. |
 | `rate cannot be combined with other aggregates` | `rate()`이(가) 있는 여러 항목 | 위젯당 1개의 `rate()`. 수식과 결합합니다. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | 시계열을 제거합니다. |
 | `apdex requires an entity with a status attribute` | 지표 엔터티의 `apdex` | `Transaction`/`Span`/`AppRequest` 사용 |

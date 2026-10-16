@@ -1,7 +1,7 @@
 ---
 title: 대시보드 블루프린트
 description: 애플리케이션 및 인프라 모니터링용 블루프린트를 사용하여 가시성 인사이트 대시보드를 작성합니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 1%
@@ -644,7 +644,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](#53-curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
+**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](../references/data-dictionary.md#curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
 
 `netRx` 쿼리:
 
@@ -939,7 +939,7 @@ SELECT average(value) AS v FROM JvmHeapUsed TIMESERIES AUTO
 limit - used
 ```
 
-**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](#53-curated-metric-entities) 참조)
+**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](../references/data-dictionary.md#curated-metric-entities) 참조)
 
 `rx` 쿼리:
 

@@ -1,7 +1,7 @@
 ---
 title: SQL로 쿼리하는 방법
 description: Observability Insights에서 SQL 쿼리를 작성하고 실행하는 방법에 대해 알아봅니다.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -43,7 +43,7 @@ FROM Transaction SELECT count(*) FACET service
 
 > **중요**
 >
-> 빌드하기 전에 **검색.** 속성 가용성은 각 서비스가 계측되는 방식에 따라 다릅니다. 새 테넌트에서 [검색 쿼리](#101-data-discovery)를 먼저 실행하여 실제로 데이터를 포함하는 서비스, 호스트, 특성 및 지표를 확인합니다.
+> 빌드하기 전에 **검색.** 속성 가용성은 각 서비스가 계측되는 방식에 따라 다릅니다. 새 테넌트에서 [검색 쿼리](../../examples/query-cookbook.md#data-discovery)를 먼저 실행하여 실제로 데이터를 포함하는 서비스, 호스트, 특성 및 지표를 확인합니다.
 
 ### 쿼리 실행 방법
 
