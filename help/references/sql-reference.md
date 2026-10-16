@@ -1,9 +1,9 @@
 ---
 title: SQL 참조
 description: Observability Insights에서 지원하는 SQL 구문, 절 및 함수를 참조하십시오.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '1505'
+source-wordcount: '1504'
 ht-degree: 11%
 ---
 
@@ -29,7 +29,7 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-> **참고**
+>[!NOTE]
 >
 > 위의 `--` 주석은 설명서에만 해당됩니다. SQL 자체는 주석을 허용하지 않습니다.
 

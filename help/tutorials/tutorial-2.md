@@ -1,9 +1,9 @@
 ---
 title: '자습서 2: 데이터 제어'
 description: Observability Insights에서 쿼리 결과를 필터링, 그룹화 및 제어하는 방법을 알아봅니다.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '336'
 ht-degree: 0%
 ---
 
@@ -67,7 +67,7 @@ SELECT percentage(*, WHERE duration > 2000) AS slowPct FROM Transaction FACET se
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> **팁**
+>[!TIP]
 >
 > `Transaction.duration`의 p50, p95 및 p99는 긴 창에 걸쳐 롤업에서 제공되므로 주별 보기를 빠르게 볼 수 있습니다.
 

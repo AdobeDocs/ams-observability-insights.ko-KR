@@ -1,9 +1,9 @@
 ---
 title: SQL로 쿼리하는 방법
 description: Observability Insights에서 SQL 쿼리를 작성하고 실행하는 방법에 대해 알아봅니다.
-source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 0%
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 SQL을 사용하는 가장 좋은 방법은 **Explore**&#x200B;을(를) 열고 직접 데이터를 테스트하는 것입니다.
 
-> **팁**
+>[!TIP]
 >
 > SQL은 읽기 전용입니다. 데이터를 변경하거나 삭제할 수 없으며 모든 쿼리의 범위가 테넌트로 지정됩니다.
 
@@ -92,6 +92,6 @@ flowchart LR
 | **탐색** | 전역 시간 선택기입니다. 선택기 범위가 활성 상태일 때는 `SINCE`/`UNTIL`이(가) 무시됩니다. |
 | 명시적 범위가 없는 **API** | 쿼리에서 `SINCE`/`UNTIL`이(가) 마지막 시간으로 기본 설정됩니다. |
 
-> **참고**
+>[!NOTE]
 >
 > 선택기가 대시보드 및 탐색에서 이기므로 이 안내서는 일반적으로 `SINCE`개의 대시보드 쿼리를 벗어납니다. 쿼리의 시간 선택기를 항상 정의해야 합니다.
