@@ -1,28 +1,15 @@
 ---
 title: 대시보드 블루프린트
 description: 애플리케이션 및 인프라 모니터링용 블루프린트를 사용하여 가시성 인사이트 대시보드를 작성합니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 94e108d029b04bf4f04aec3fb8b949705c4005e1
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1196'
 ht-degree: 1%
 ---
 
 ## 대시보드 블루프린트 {#dashboard-blueprints}
 
 각 블루프린트는 완벽하고 복잡한 대시보드입니다. 여기에는 목표, 탭 및 섹션 레이아웃, 모든 위젯(차트 유형, 단위, 임계값, 크기 및 쿼리 포함)이 나열됩니다. 크기가 12열 눈금의 `width×height`입니다. 위에서 아래로 각 하나를 빌드한 다음 드래그하여 조정합니다.
-
-| 블루프린트 | 대상자 | 강조 표시 |
-| ------------------------------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------- |
-| [11.1 골든 시그널 / SLO](#111-golden-signals--slo-board) | SRE, 호출 시 | 임계값, Apdex, 오류 %, 포화가 있는 KPI 타일 |
-| [11.2 오류 등급](#112-error-triage-board) | 호출 시 | 오류 클래스, 5xx 핫스팟, 추적 ID로 요청 실패 |
-| [11.3 지연 심층 분석](#113-latency-deep-dive-board) | 성능 엔지니어 | 백분위수, 지연 버킷, 가변성, 트랜잭션 구성, 가장 느린 추적 |
-| [11.4 다운스트림 종속성](#114-downstream-dependencies-board) | 서비스 소유자 | 아웃바운드 HTTP, DB, 메시징, RPC |
-| [11.5 AEM 작성자/게시/Dispatcher](#115-aem-author--publish--dispatcher-board) | AEM 팀 | 계층별 섹션, Sling/JSP/JCR, Dispatcher 로드 |
-| [11.6 인프라 용량](#116-infrastructure-capacity-board) | 플랫폼 / 용량 | CPU 모드, 메모리, 디스크, 네트워크 속도, 공식 |
-| [11.7 JVM 상태](#117-jvm-health-board) | Java 팀 | 힙 % 공식, 호스트당 힙 및 풀, 스레드, JVM CPU |
-| [11.8 경영진/NOC 담벼락](#118-executive--noc-wall-board) | NOC, 리더십 | KPI 타일, 가용성 공식, 계층별 트래픽, SLO 참고 사항 |
-| [11.9 비율 및 여유 공간](#119-ratios--headroom-board-formula-showcase) | 모든 사용자 | 공식 위젯 쇼케이스 |
-| [11.10 서비스 탐색기](#1110-service-explorer-variable-driven) | 모든 팀 | 변수 중심, 재사용 가능 |
 
 **차트 범례:** **N** = 숫자, **L** = 줄, **A** = 영역, **B** = 막대, **P** = 원형, **T** = 테이블.
 
@@ -644,7 +631,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](#53-curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
+**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](../references/data-dictionary.md#curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
 
 `netRx` 쿼리:
 
@@ -939,7 +926,7 @@ SELECT average(value) AS v FROM JvmHeapUsed TIMESERIES AUTO
 limit - used
 ```
 
-**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](#53-curated-metric-entities) 참조)
+**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](../references/data-dictionary.md#curated-metric-entities) 참조)
 
 `rx` 쿼리:
 

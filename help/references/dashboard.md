@@ -1,7 +1,7 @@
 ---
 title: 대시보드 및 쿼리 설명서
 description: Observability Insights SQL 쿼리 및 대시보드에 대한 참조 설명서입니다.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '10254'
 ht-degree: 4%
@@ -2957,7 +2957,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](#53-curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
+**W20 · 한 호스트(수식)에 대한 총 네트워크 I/O** — 수식 위젯, L, `bytes/s`, 12×4. 수식은 `FACET`할 수 없으며 `rate()`의 범위를 하나의 호스트로 지정해야 합니다([조정된 지표 엔터티](data-dictionary.md#curated-metric-entities) 참조). 따라서 호스트를 고정합니다. `web-publish-01`을(를) W5에서 실제 호스트 이름으로 바꿉니다.
 
 `netRx` 쿼리:
 
@@ -3245,7 +3245,7 @@ SELECT average(value) AS v FROM JvmHeapUsed TIMESERIES AUTO
 limit - used
 ```
 
-**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](#53-curated-metric-entities) 참조)
+**W5 · 한 호스트에 대한 네트워크 출력/입력 비율** — 수식, L(호스트를 고정합니다. [조정된 지표 엔터티](data-dictionary.md#curated-metric-entities) 참조)
 
 `rx` 쿼리:
 
@@ -3430,7 +3430,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 | `FACET and TIMESERIES require an aggregate query` | FACET/TIMESERIES가 있는 이벤트 쿼리 | 합계를 사용합니다. |
 | `FACET supports at most five attributes` | > 5개 패싯 | 줄이기. |
 | `average requires a numeric attribute` | e.g. `average(service)` | `uniqueCount`/`latest` 또는 숫자 특성을 사용하십시오. |
-| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()`(시계열 또는 계기 없음) | `TIMESERIES AUTO`을(를) 추가합니다. ✔ 카운터 엔터티([조정된 지표 엔터티](#53-curated-metric-entities))를 사용합니다. 게이지의 경우 `derivative()`을(를) 사용합니다. |
+| `rate requires TIMESERIES` / `rate is only available for counter measures` | `rate()`(시계열 또는 계기 없음) | `TIMESERIES AUTO`을(를) 추가합니다. ✔ 카운터 엔터티([조정된 지표 엔터티](data-dictionary.md#curated-metric-entities))를 사용합니다. 게이지의 경우 `derivative()`을(를) 사용합니다. |
 | `rate cannot be combined with other aggregates` | `rate()`이(가) 있는 여러 항목 | 위젯당 1개의 `rate()`. 수식과 결합합니다. |
 | `percentOfTotal cannot be combined with TIMESERIES` | — | 시계열을 제거합니다. |
 | `apdex requires an entity with a status attribute` | 지표 엔터티의 `apdex` | `Transaction`/`Span`/`AppRequest` 사용 |

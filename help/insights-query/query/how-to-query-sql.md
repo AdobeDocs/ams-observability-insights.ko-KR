@@ -1,9 +1,9 @@
 ---
 title: SQL로 쿼리하는 방법
 description: Observability Insights에서 SQL 쿼리를 작성하고 실행하는 방법에 대해 알아봅니다.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 0%
 ---
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 
 SQL을 사용하는 가장 좋은 방법은 **Explore**&#x200B;을(를) 열고 직접 데이터를 테스트하는 것입니다.
 
-> **팁**
+>[!TIP]
 >
 > SQL은 읽기 전용입니다. 데이터를 변경하거나 삭제할 수 없으며 모든 쿼리의 범위가 테넌트로 지정됩니다.
 
@@ -43,7 +43,7 @@ FROM Transaction SELECT count(*) FACET service
 
 > **중요**
 >
-> 빌드하기 전에 **검색.** 속성 가용성은 각 서비스가 계측되는 방식에 따라 다릅니다. 새 테넌트에서 [검색 쿼리](#101-data-discovery)를 먼저 실행하여 실제로 데이터를 포함하는 서비스, 호스트, 특성 및 지표를 확인합니다.
+> 빌드하기 전에 **검색.** 속성 가용성은 각 서비스가 계측되는 방식에 따라 다릅니다. 새 테넌트에서 [검색 쿼리](../../examples/query-cookbook.md#data-discovery)를 먼저 실행하여 실제로 데이터를 포함하는 서비스, 호스트, 특성 및 지표를 확인합니다.
 
 ### 쿼리 실행 방법
 
@@ -92,6 +92,6 @@ flowchart LR
 | **탐색** | 전역 시간 선택기입니다. 선택기 범위가 활성 상태일 때는 `SINCE`/`UNTIL`이(가) 무시됩니다. |
 | 명시적 범위가 없는 **API** | 쿼리에서 `SINCE`/`UNTIL`이(가) 마지막 시간으로 기본 설정됩니다. |
 
-> **참고**
+>[!NOTE]
 >
 > 선택기가 대시보드 및 탐색에서 이기므로 이 안내서는 일반적으로 `SINCE`개의 대시보드 쿼리를 벗어납니다. 쿼리의 시간 선택기를 항상 정의해야 합니다.

@@ -1,9 +1,9 @@
 ---
 title: SQL 시작
 description: SQL을 사용하여 Observability Insights 원격 분석을 쿼리하는 방법을 알아봅니다.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '684'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **적용 대상** | Insights UI → **탐색** 및 **대시보드**(사용자 지정 대시보드) |
 | **대상자** | SQL을 아는 엔지니어, SRE 및 고급 사용자 |
 
-> **팁**
+>[!TIP]
 >
 > `sql`(으)로 표시된 모든 코드 블록은 **SQL 탐색** 또는 **SQL→ 위젯 추가**→ 붙여 넣을 수 → SQL 쿼리입니다.
 
@@ -42,7 +42,7 @@ SQL을 사용하여 다음을 수행합니다.
 
 SQL은 개별 요청 행을 반환하는 **이벤트 쿼리**&#x200B;와 합계, 백분위수, 비율, 분류 및 시계열을 반환하는 **집계 쿼리**&#x200B;를 모두 지원합니다.
 
-> **팁**
+>[!TIP]
 >
 > **대시보드 → 만들기**&#x200B;의 템플릿은 완전히 SQL에서 빌드되었습니다. 연필 아이콘이 있는 템플릿 위젯을 열어 쿼리를 보고 학습합니다.
 
@@ -57,7 +57,7 @@ SQL은 4개의 데이터 제품군을 쿼리할 수 있습니다. 전체 목록�
 | **일반 지표** | `MetricGauge`, `MetricSum` | 이름별 모든 OpenTelemetry 지표, 지표 검색 |
 | **미리 집계된 범위 컴포지션** | `SpanBreakdown` | 트랜잭션을 구성하는 하위 작업 |
 
-> **참고**
+>[!NOTE]
 >
 > 로그, 경고 정의 및 인벤토리 관계를 사용할 수 없습니다.
 

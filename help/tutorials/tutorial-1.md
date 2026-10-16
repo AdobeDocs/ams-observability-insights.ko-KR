@@ -1,9 +1,9 @@
 ---
 title: '자습서 1: 첫 번째 쿼리'
 description: Observability Insights 원격 분석에 대해 첫 번째 SQL 쿼리를 작성하십시오.
-source-git-commit: 52cc24792c47727700428be58b5bbb2a5c7223d2
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '549'
 ht-degree: 0%
 ---
 
@@ -33,7 +33,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 행은 첫 번째 열을 기준으로 내림차순으로 정렬되므로 `timestamp`을(를) 먼저 놓으면 맨 위에 최신 요청이 표시됩니다.
 
-> **참고**
+>[!NOTE]
 >
 > SQL에 `SELECT *`이(가) 없습니다. 속성을 나열하면 결과를 작고 읽을 수 있습니다. [데이터 사전](#data-dictionary) 및 편집기의 자동 완성이 사용 가능한 항목을 표시합니다.
 
@@ -67,7 +67,7 @@ SELECT uniqueCount(host) FROM Transaction
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> **팁**
+>[!TIP]
 >
 > 별칭은 열 머리글과 범례 레이블이 되며 `ORDER BY`에서 참조하는 별칭입니다. 모든 집계에 이름을 붙이는 습관을 들여라.
 
@@ -125,7 +125,7 @@ SELECT count(*) AS slowOrFailed FROM Transaction WHERE service = 'checkout' AND 
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> **참고**
+>[!NOTE]
 >
 > 문자열 값은 대/소문자를 구분하며 `"Error"` 또는 `'error'`이(가) 아닌 작은 따옴표 `'Error'`을(를) 사용합니다. `checkout`을(를) 테넌트의 서비스로 바꾸십시오. 다음 단계에서는 이러한 항목을 나열하는 방법을 보여 줍니다.
 

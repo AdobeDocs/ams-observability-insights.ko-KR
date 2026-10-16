@@ -1,9 +1,9 @@
 ---
 title: '자습서 3: 대시보딩 진행'
 description: 가시성 인사이트에서 변수, 공식 및 여러 위젯을 사용하여 대시보드를 작성합니다.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '878'
 ht-degree: 3%
 ---
 
@@ -39,7 +39,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> **경고**
+>[!WARNING]
 >
 > `host`(및 디스크의 경우 `device`)별로 패싯 `rate()`을(를) 항상 지정하거나 하나의 호스트로 필터링하십시오. 그렇지 않으면 서로 다른 숙주의 판독값이 한데 뒤섞여 결과가 무의미해진다.
 
