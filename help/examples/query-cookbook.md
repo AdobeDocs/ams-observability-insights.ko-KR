@@ -1,17 +1,15 @@
 ---
 title: 쿼리 Cookbook
 description: SQL 쿼리 레서피를 사용하여 Observability Insights에서 응용 프로그램 및 인프라 원격 분석을 조사합니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: ae94813d8db77f7d5795add161a7fbfd7427c050
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '554'
 ht-degree: 0%
 ---
 
 ## 쿼리 Cookbook {#query-cookbook}
 
 Cookbook은 주제별로 그룹화된 바로 사용 가능한 쿼리 라이브러리입니다. 각 쿼리 앞에는 **bold**&#x200B;의 가장 적합한 차트 종류가 표시됩니다. 시간 선택기가 창을 제어하기 때문에 Time 절이 제외됩니다.
-
-**이 문서에서:** [10.1 데이터 검색](#101-data-discovery) · [10.2 처리량](#102-throughput) · [10.3 대기 시간](#103-latency) · [10.4 오류](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 서비스 및 호스트](#106-services-hosts--instances) · [10.7 종속성](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 인프라](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
 >[!TIP]
 >

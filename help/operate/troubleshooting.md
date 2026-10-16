@@ -1,9 +1,9 @@
 ---
 title: 문제 해결
 description: Observability Insights에서 SQL 쿼리, 차트 및 대시보드 문제를 해결합니다.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: c45d62d2af62e6bd0c88e210b31c8954b75533be
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '335'
 ht-degree: 5%
 ---
 
@@ -26,7 +26,7 @@ ht-degree: 5%
 | `ORDER BY 'x' must reference a selected value or alias` | 선택하지 않은 항목별 순서 지정 | 별칭을 사용하여 합계를 지정하고 별칭을 기준으로 순서를 지정합니다. |
 | `IN requires between 1 and 100 values` | — | `LIKE`을(를) 분할하거나 사용합니다. |
 | `Use IS NULL or IS NOT NULL for null comparisons` | `attr = NULL` | `IS NULL` 사용. |
-| `Unexpected character '{'` | 위젯 추가 미리 보기 또는 저장 시 `{{variable}}` | [자습서 3, 단계 8.7](#87-make-dashboards-reusable-with-variables) 제한을 참조하십시오. |
+| `Unexpected character '{'` | 위젯 추가 미리 보기 또는 저장 시 `{{variable}}` | [자습서 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables) 제한을 참조하십시오. |
 | `Unexpected character ';'` / `'"'` | 세미콜론 또는 큰따옴표 | `;`을(를) 제거하십시오. 작은 따옴표를 사용하십시오. |
 | `Expected a positive duration such as 30 minutes` | `TIMESERIES 5m` | `TIMESERIES 5 minutes`을(를) 씁니다. |
 | `Time range cannot exceed 31 days` | 선택기 > 31d | 창 범위를 좁힙니다. |
@@ -36,7 +36,7 @@ ht-degree: 5%
 | `Unknown query name 'x' - must be one of: …` | 수식에서 누락된 이름을 참조합니다. | 이름을 정확하게 일치시키십시오(대/소문자 구분). |
 | **저장 실패** | 위젯 쿼리가 잘못된 서버측(종종 `{{var}}`)입니다. | 최근에 편집한 각 위젯을 열고 **실행**&#x200B;합니다. 잘못된 위젯을 수정하거나 제거합니다. |
 | _값 선택:{{x}}_ | 변수에 선택 항목이 없습니다. | 변수 막대에서 값을 선택합니다. |
-| _최근 활동이 없습니다..._ | 창에 행 없음 | 창을 넓히고 검색 쿼리([데이터 검색](#101-data-discovery))로 필터를 확인합니다. |
+| _최근 활동이 없습니다..._ | 창에 행 없음 | 창을 넓히고 검색 쿼리([데이터 검색](../examples/query-cookbook.md#data-discovery))로 필터를 확인합니다. |
 | 선이 점으로 산산조각 나옴 | 데이터 케이던스보다 작은 버킷 | `TIMESERIES AUTO`(≥ 2분) 또는 막대 차트를 사용합니다. |
 | 패싯에 빈 문자열 그룹이 표시됩니다. | 일부 행에서 속성이 누락됨 | `WHERE attr != ''`을(를) 추가합니다. |
 | _이 레거시 SQL 패널은 더 이상 실행되지 않습니다_ | 이전 raw-SQL 빌더의 패널 | SQL에서 편집 → 다시 빌드합니다. |
