@@ -1,15 +1,13 @@
 ---
 title: 부록
 description: Observability Insights SQL 쿼리 및 대시보드에 대한 추가 정보를 참조하십시오.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: c45d62d2af62e6bd0c88e210b31c8954b75533be
 workflow-type: tm+mt
-source-wordcount: '145'
-ht-degree: 5%
+source-wordcount: '131'
+ht-degree: 6%
 ---
 
 ## 부록 {#appendix}
-
-**이 문서에서:** [14.1 제한](#141-limits) · [14.2 내보내기 파일 형식](#142-export-file-format) · [14.3 한 페이지 치트 시트](#143-one-page-cheat-sheet)
 
 ### 제한
 
