@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: ba4f816187e77f3f7b708942b3f14535417c2fdc
 workflow-type: tm+mt
-source-wordcount: '186'
+source-wordcount: '253'
 ht-degree: 0%
 ---
 
@@ -37,3 +37,11 @@ ht-degree: 0%
 ## 가시성 인사이트는 실제로 어떤 데이터를 수집합니까? {#what-data-is-collected}
 
 모니터링 범위, 응용 프로그램 표시, 보존 기간 및 운영상의 영향을 보려면 [검사, 환경 및 데이터 보존](../get-started/coverage-and-data.md)을 참조하십시오.
+
+## Google Chrome이 아닌 다른 브라우저로 로그인할 수 있는 이유는 무엇입니까?
+
+Observability Insights에 서드파티 쿠키를 허용하고 다시 로그인하려면 다음을 수행하십시오.
+
+1. 쿠키 설정에 액세스하려면 Google Chrome에서 `chrome://settings/cookies`을(를) 여십시오.
+2. Observability Insights용 쿠키를 허용하려면 **타사 쿠키를 사용할 수 있는 사이트**&#x200B;에서 **추가**&#x200B;를 선택하고 `https://insights.adobecqms.net`을(를) 입력하십시오.
+3. 문제가 해결되었는지 확인하려면 시크릿 창에서 가시성 인사이트에 로그인합니다.
